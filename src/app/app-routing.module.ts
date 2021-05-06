@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthentificationComponent } from './components/authentification/authentification.component';
+import { RegisterComponent } from './components/authentification/register/register.component';
 
 const routes: Routes = [
-  { path: '**', pathMatch: 'full', component: AuthentificationComponent},
   { path: 'connexion', component: AuthentificationComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '**', pathMatch: 'full', redirectTo: "connexion"},
+
+
 ];
 
 @NgModule({
@@ -12,3 +16,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
